@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>NYC Park Trails Analysis</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <h1> New York City Park Trails in designated 'Forever Wild' areas.</h1>
+    <div>
+        NYC Parks' "Forever Wild" initiative protects over 500 acres of unique, ecologically valuable sites across all five boroughs.
+        <p> <!-- Link to dataset -->
+            This analysis is based on datasets provided by NYC Open Data:
+            <a href="https://data.cityofnewyork.us/Environment/Parks-Trails/vjbm-hsyr/about_data" target="_blank">
+                Parks Trails Dataset
+            </a>
+        </p>
+    </div>
+
+    <div> <!-- Brief overview -->
+        <p>
+            Data includes information about park where trail is located, width of trail,
+            surface type of trail, difficulty rating, rank of amount developed,
+            and date of information collected. Limitations include width values rounded to the nearest foot.
+        </p>
+    </div>
+
+    <!-- Hypothesis -->
+    <div id = "hypothesis">
+    <h2>Hypothesis:</h2>
+        <ul>
+        <li> Undeveloped trails tend to have a smaller average width, and are more likely to have natural surfaces like dirt.</li>
+        <li> Developed trails tend to have a greater average width and are more likely to have unnatural surfaces such as pavement or concrete. </li>
+        <li> There is a relationship between trail surface type and difficulty rating. Trails with paved or unnatural surfaces are associated with lower difficulty levels.</li>
+        </ul>
+        <p> <b> Click here for my analysis! </b> </p>
+    </div>
+
+    <!-- Hidden Analysis -->
+    <div id = "analysis" style="display:none;">
+        <h2>Analysis:</h2>
+        <ul>
+        I wanted to see if there was any relationship between development of trails, dificulty, and surface type. 
+
+        <li> I found that there are more observations of developed trails overall. </li> 
+        <li> The most frequent difficulty of trail is a level 2, or slightly uneven. </li> 
+        <li> Most paths are either dirt or paved, with an average of around 7 feet in width. </li> 
+        <li> I was not able to find an obvious relationship between year of data collected and other variables. </li> 
+        </ul>
+        <p> <b> Click here for my hypothesis! </b> </p>
+    </div>
+
+    
+    <div> 
+        <!-- Frequency and Distribution -->
+        <h2>Exploratory Data Analysis and Visualization</h2>
+
+        <!-- Summary Statistics-->
+        <h3>Quantitative Variables</h3>
+
+        <table class="center-table">
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Min</th>
+                    <th>Q1</th>
+                    <th>Median</th>
+                    <th>Mean</th>
+                    <th>Q3</th>
+                    <th>Max</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Width (ft)</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>2013</td>
+                    <td>2014</td>
+                    <td>2014</td>
+                    <td>2016</td>
+                    <td>2021</td>
+                    <td>2025</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Ordinal Variables</h3>
+
+<h4>Development</h4>
+<ul>
+    <li>Class V: Fully Developed — 2101</li>
+    <li>Class III: Developed/Improved — 1971</li>
+    <li>Class IV: Highly Developed — 1950</li>
+    <li>Class II: Minor Developed — 681</li>
+    <li>Class I: Undeveloped — 70</li>
+</ul>
+
+<h4>Difficulty</h4>
+<ul>
+    <li>Slightly uneven — 4074</li>
+    <li>Flat and smooth — 2245</li>
+    <li>Moderate and rough — 340</li>
+    <li>Strenuous climbs — 96</li>
+</ul>
+
+<h3>Categorical Variables</h3>
+
+<h4>Surface Type</h4>
+<ul>
+    <li>Dirt — 2720</li>
+    <li>Paved — 2513</li>
+    <li>Gravel — 548</li>
+    <li>Wood Chips — 425</li>
+    <li>Sand - 224</li>
+    <li>Boardwalk - 117</li>
+    <li>Concrete - 110</li>
+    <li>Grasses - 93</li>
+    <li>Crushed Rock - 16</li>
+    <li>Road - 2</li>
+</ul>
+
+<h4>Parks with Most Observed Trails</h4>
+<ul>
+    <li>Pelham Bay Park — 761</li>
+    <li>Van Cortlandt Park — 663</li>
+    <li>Alley Pond Park  — 515</li>
+    <li>Prospect Park — 371</li>
+    <li>Central Park - 277</li>
+</ul>
+
+        <h3> Quantatative Variable Analysis:
+        <div class="image-row">
+            <img src="date_quant_hist.png" alt="Distibution of Date Collected">
+            <img src="width_quant_box.png" alt="Distribution of Width of Trail">
+        </div>
+        <h3> Ordinal Variable Analysis: </h3>
+        <div class="image-row">
+            <img src="develop_ordin_bar.png" alt="Frequency of Trail Development">
+            <img src="difficulty_ordin_bar.png" alt="Frequency of Trail Difficulty">
+        </div>
+        <h3> Categorical Variable Analysis: </h3>
+        <div class="image-row">
+            <img src="topog_categ_bar.png" alt="Frequency of Trail Topography">
+            <img src="surface_categ_bar.png" alt="Frequency of Trail Surface">
+            </div>
+    </div>
+    
+    <div> <!-- Relational and Comparison Graphs -->
+        <h3> Comparison Graphs: </h3>
+            <img src="surface_difficulty_compare.png" alt="Surface of Trail and Trail Difficulty Compared">
+            <img src="develop_width_compare.png" alt="Development of Trail and Trail Width Compared">
+            <img src="width_years_compare.png" alt="Trail Width and Year Collected Compared">
+            </div>
+        </div>
+        <script src="index.js"></script>
+</body>
+
+</html>

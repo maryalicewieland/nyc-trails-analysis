@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+ul {
+  padding-left: 0; 
+}
+
+li {
+  list-style-position: inside; 
+}
+
+.center-table {
+  margin-left: auto;
+  margin-right: auto;
+  /* Optional: ensure the table doesn't take the full width so margins can work */
+  width: fit-content; 
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+body {
+    font-size: 28px;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-row img {
+    width: 100%;
+    max-width: 800px;
+}
