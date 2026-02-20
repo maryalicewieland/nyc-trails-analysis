@@ -1,7 +1,9 @@
 import pandas as pd
 
-df = pd.read_csv("Parks_Trails_20260213.csv")
+df = pd.read_csv("P1_EDA/Park_Trails_Clean.csv")
+#Drop duplicate lines
 df = df.drop_duplicates()
+#Change columns to lower case
 df.columns = df.columns.str.lower()
 
 #Clean quantatative variables to approximates. 
@@ -14,14 +16,14 @@ width_map = {
     "6 feet to less than 8 feet": 7,
     "Over 8 feet": 9
 }
-
+#Create a map that changes text to numeric from width_map
 df['width_ft'] = df['width_ft'].map(width_map)
 
-#Clean dates 
+#Clean dates to just year. (For purposes of this high-level exploration)
 df['date_collected'] = pd.to_datetime(df["date_collected"], errors='coerce').dt.year
 
 
-#Clean ordinal variables for x-labels. 
+#Clean ordinal variables for x-labels. (Did not end up using in Phase: 1)
 #----------------
 #Clean difficulty
 difficulty_map = {

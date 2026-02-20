@@ -1,7 +1,8 @@
 import pandas as pd
 
+#Summary of quantitative variables
 def quant_summ(df):
-    print("Quantatative Summary:")
+    print("Quantitative Summary:")
     for col in df.columns: 
         print("")
         print(f"Column: {col}")
@@ -11,13 +12,16 @@ def quant_summ(df):
         print("Median:",df[col].median())
         print("Q1:",df[col].quantile(0.25))
         print("Q3:",df[col].quantile(0.75))
+        print("")
 
+#Summary of frequency for ordinal, counts values 
 def ordin_summ(df):
     print("Ordinal Summary:")
     for col in df.columns: 
         print("")
         print("Most frequent:", df[col].value_counts())
 
+#Summary of frequency for categorical, counts values 
 def categ_summ(df):
     print("Categorical Sumamry")
     for col in df.columns: 
@@ -25,7 +29,7 @@ def categ_summ(df):
         print("Most frequent:", df[col].value_counts())
 
 def main():
-    df = pd.read_csv("Park_Trails_Clean.csv")
+    df = pd.read_csv("P1_EDA/Park_Trails_Clean.csv")
 
     quant_cols = ['width_ft', 'date_collected']
     quant_df = df[quant_cols]

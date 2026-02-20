@@ -15,7 +15,7 @@ def quant_vis(df, col):
     #Histogram 
     #---------
     plt.figure()
-    plt.hist(df.dropna(), bins=10)
+    plt.hist(df.dropna(), bins=10, color='forestgreen')
     plt.title(f"Histogram of {col}")
     plt.xlabel(col)
     plt.ylabel("Frequency")
@@ -29,9 +29,10 @@ def ordin_vis(df, col):
     #Bar Chart
     #---------
     plt.figure()
-    plt.bar(counts.index, counts.values)
-    plt.title(f"Bar Chart of {col}")
-    plt.xlabel(col)
+    #Finds position, value, and sets color
+    plt.bar(counts.index, counts.values, color='forestgreen')
+    plt.title(f"Frequency of Development")
+    plt.xlabel("Development Class")
     plt.ylabel("Frequency")
     plt.xticks(rotation=45)
     plt.show()    
@@ -39,11 +40,10 @@ def ordin_vis(df, col):
 def categ_vis(df, col): 
 
     counts = df.value_counts()
-    
     #Bar Chart
     #---------
     plt.figure()
-    plt.bar(counts.index, counts.values)
+    plt.bar(counts.index, counts.values, color='olive')
     plt.title(f"Bar Chart of {col}")
     plt.xlabel(col)
     plt.ylabel("Frequency")
@@ -52,7 +52,7 @@ def categ_vis(df, col):
 
 
 def main():
-    df = pd.read_csv("Park_Trails_Clean.csv")
+    df = pd.read_csv("P1_EDA/Park_Trails_Clean.csv")
     quant_cols = ['width_ft', 'date_collected']
     for col in quant_cols:
         quant_vis(df[col], col)

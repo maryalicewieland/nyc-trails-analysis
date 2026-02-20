@@ -1,30 +1,62 @@
 //Event handlers for highlight element
-const hypothesis = document.getElementById("hypothesis")
-const analysis = document.getElementById("analysis")
+const stateOne = document.getElementById("stateOne")
+const stateTwo = document.getElementById("stateTwo")
 
-hypothesis.addEventListener("mouseover", function() {
-    hypothesis.style.backgroundColor = "#7bbf7b";;
+stateOne.addEventListener("mouseover", function() {
+    stateOne.style.backgroundColor = "#a7e6a7";;
 });
 
-hypothesis.addEventListener("mouseout", function() {
-    hypothesis.style.backgroundColor = "#ffffff";;
+stateOne.addEventListener("mouseout", function() {
+    stateOne.style.backgroundColor = "#ffffff";;
 });
 
-analysis.addEventListener("mouseover", function() {
-    analysis.style.backgroundColor = "#7bbf7b";;
+stateTwo.addEventListener("mouseover", function() {
+    stateTwo.style.backgroundColor = "#a7e6a7";;
 });
 
-analysis.addEventListener("mouseout", function() {
-    analysis.style.backgroundColor = "#ffffff";;
+stateTwo.addEventListener("mouseout", function() {
+    stateTwo.style.backgroundColor = "#ffffff";;
 });
 
 //Event handlers for click change element
-hypothesis.addEventListener("click", function() {
-    hypothesis.style.display = "none";
-    analysis.style.display = "block";
+stateOne.addEventListener("click", function() {
+    stateOne.style.display = "none";
+    stateTwo.style.display = "block";
 });
 
-analysis.addEventListener("click", function() {
-    analysis.style.display = "none";
-    hypothesis.style.display = "block";
+stateTwo.addEventListener("click", function() {
+    stateTwo.style.display = "none";
+    stateOne.style.display = "block";
 });
+
+//Event handlers for highlight element
+const methodology = document.getElementById("methodology")
+const limitations = document.getElementById("limitations")
+
+methodology.addEventListener("mouseover", function() {
+    methodology.style.backgroundColor = "#a7e6a7";;
+});
+
+methodology.addEventListener("mouseout", function() {
+    methodology.style.backgroundColor = "#ffffff";;
+});
+
+limitations.addEventListener("mouseover", function() {
+    limitations.style.backgroundColor = "#a7e6a7";;
+});
+
+limitations.addEventListener("mouseout", function() {
+    limitations.style.backgroundColor = "#ffffff";;
+});
+
+//Event handlers for click change element
+methodology.addEventListener("click", function() {
+    methodology.style.display = "none";
+    limitations.style.display = "block";
+});
+
+limitations.addEventListener("click", function() {
+    limitations.style.display = "none";
+    methodology.style.display = "block";
+});
+
